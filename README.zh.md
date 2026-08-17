@@ -6,7 +6,7 @@ DeepSeek Harness Desktop 的“会话名称自定义”插件。
 
 ## 功能
 
-- **点击当前对话顶部的会话名称**（或名称旁边的铅笔按钮）即可原地编辑标题：`Enter` 保存，`Escape` 取消；名称为空时给出明确提示，不会保存。
+- **点击当前对话顶部的会话名称**（或名称旁边的铅笔按钮）即可原地编辑标题：打开时当前名称自动全选一次，可直接输入新名称整体替换；输入过程中不会重复全选，局部修改和中文输入法均正常追加。`Enter` 保存，`Escape` 取消；名称为空时给出明确提示，不会保存。
 - 保存走的是内置的 `session.rename` 契约——与左侧历史列表原生“重命名”完全相同的路径——因此自定义名称会：
   - 同步显示在对话顶部、左侧历史列表以及其他所有展示会话名称的位置；
   - 以用户来源的 `session/title` 日志事件持久化（重启、切换会话后仍保留）；
@@ -20,6 +20,8 @@ DeepSeek Harness Desktop 的“会话名称自定义”插件。
 ## 安装
 
 ```sh
+dsh plugin --profile web add zzylanmengqingchuan/dsh-session-rename
+# 或从本地目录安装：
 dsh plugin --profile web add <本包路径>
 ```
 

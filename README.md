@@ -6,7 +6,7 @@ Custom session titles for the dsh web GUI (DeepSeek Harness Desktop).
 
 ## What it does
 
-- **Click the title at the top of the current conversation** (or the pencil button beside it) to edit the session name in place. `Enter` saves, `Escape` cancels, and an empty name shows a clear hint instead of saving.
+- **Click the title at the top of the current conversation** (or the pencil button beside it) to edit the session name in place. The current name is auto-selected once on open so you can type a replacement immediately; typing never re-selects, so partial edits and IME input append normally. `Enter` saves, `Escape` cancels, and an empty name shows a clear hint instead of saving.
 - Saving uses the built-in `session.rename` contract — the same path as the sidebar's native **Rename** row action — so the custom name is:
   - synced to the conversation header, the sidebar history list, and every other title surface;
   - persisted as a user-sourced `session/title` log event (survives restarts and session switching);
@@ -20,6 +20,8 @@ Session type, conversation modes (standard / Think / Bash), the selected model, 
 ## Install
 
 ```sh
+dsh plugin --profile web add zzylanmengqingchuan/dsh-session-rename
+# or from a local checkout:
 dsh plugin --profile web add <path-to-this-package>
 ```
 
